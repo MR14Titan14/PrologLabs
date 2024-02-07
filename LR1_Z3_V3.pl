@@ -85,7 +85,8 @@ uncle(X,Y):-parent(K,Y),parent(Z,K),parent(Z,X),man(X),man(K),man(Z),X\=K.
 
 %Построить предикат, который проверяет, является ли X дядей Y. C использованием готовых предикатов.
 %uncle(+X,+Y)
-%uncle(X,Y):-parent(K,Y),brother(X,K),man(X).
+uncle(X,Y):-parent(K,Y),brother(X,K),man(X).
 
 %Построить предикат, который выводит всех дядей X.
+%uncles(+X)
 uncles(X):-uncle(K,X),print(K),nl,fail.
