@@ -64,12 +64,12 @@ brother(X,Y):- parent(K,Y), parent(K,X), man(X), man(K), X\=Y.
 grand_so(X,Y):-parent(Y,K),parent(K,X),man(X).
 
 %Построить предикат grand_sons(X), который выводит всех внуков X. Без использования готовых предикатов.
-%grand_so(+X)
-grand_so(X):-parent(X,K),parent(K,Z),print(Z),man(Z),nl,fail.
+%grand_sons(+X)
+grand_sons(X):-parent(X,K),parent(K,Z),print(Z),man(Z),nl,fail.
 
 %Построить предикат grand_sons(X), который выводит всех внуков X. С использования готовых предикатов.
 %grand_so(+X)
-grand_so(X):-grand_so(Z,X),print(Z),nl,fail.
+grand_sons(X):-grand_so(Z,X),print(Z),nl,fail.
 
 %Построить предикат grand_ma_and_son(X,Y), который проверяет, являются ли X и Y бабушкой и внуком или внуком и бабушкой. Без использования готовых предикатов.
 %grand_ma_and_son(+X,+Y)
