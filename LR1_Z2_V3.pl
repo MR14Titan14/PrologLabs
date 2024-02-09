@@ -57,11 +57,11 @@ daughter(X,Y):-parent(Y,X),woman(X).
 
 %Построить предикат, daughter(X), который выводит дочь X.
 %daughter(+X)
-daughter(X):-daughter(K,X), print(K),!.
+daughter(X):-daughter(K,X), print(K).
 
 %Построить предикат wife(X, Y), который проверяет, является ли X женой Y.
 %wife(+X,+Y)
-wife(X,Y):-parent(X,K),parent(Y,K),woman(X).
+wife(X,Y):-parent(X,K),parent(Y,K),woman(X),X\=Y.
 
 %Построить предикат wife(X), который выводит жену X.
 %wife(+X)
