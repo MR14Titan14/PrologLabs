@@ -120,7 +120,7 @@ film(soul):-
     question(comedy),
     bagof(X,asked(X,y),L),
     length(L,A),
-    A=2.
+    A=2,!.
 
 film(elemental):-
 	question(cartoon),
@@ -148,7 +148,7 @@ film(one_plus_one):-
     question(oscar),
     bagof(X,asked(X,y),L),
     length(L,A),
-    A=1,!.
+    A=2,!.
 
 film(drujit_po_russki):-
     question(comedy),
