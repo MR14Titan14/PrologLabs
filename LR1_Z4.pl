@@ -121,6 +121,7 @@ fault(vram):-
 problem(blank_display),
 problem(no_beep).
 
+
 %Добавить несколько объектов таким образом, чтобы их можно было однозначно определить c введением дополнительных вопросов.
 problem(burning_pc) :-
     query('Is your pc burning').
@@ -137,7 +138,7 @@ problem(blue_screen),
 problem(long_beep).
 
 problem(have_pc):-
-    query('Do you have pc').
+    query('You dont have pc').
 
 fault(money):-
 problem(have_pc).

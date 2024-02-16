@@ -64,12 +64,12 @@ brother(X,Y):- parent(K,Y), parent(K,X), man(X), man(K), X\=Y.
 grand_so(X,Y):-parent(Y,K),parent(K,X),man(X).
 
 %Построить предикат grand_sons(X), который выводит всех внуков X. Без использования готовых предикатов.
-%grand_so(+X)
-grand_so(X):-parent(X,K),parent(K,Z),print(Z),man(Z),nl,fail.
+%grand_sons(+X)
+grand_sons(X):-parent(X,K),parent(K,Z),print(Z),man(Z),nl,fail.
 
 %Построить предикат grand_sons(X), который выводит всех внуков X. С использования готовых предикатов.
 %grand_so(+X)
-grand_so(X):-grand_so(Z,X),print(Z),nl,fail.
+grand_sons(X):-grand_so(Z,X),print(Z),nl,fail.
 
 %Построить предикат grand_ma_and_son(X,Y), который проверяет, являются ли X и Y бабушкой и внуком или внуком и бабушкой. Без использования готовых предикатов.
 %grand_ma_and_son(+X,+Y)
@@ -81,11 +81,11 @@ grand_ma_and_son(X,Y):-grand_so(X,Y),woman(Y);grand_so(Y,X),woman(X).
 
 %Построить предикат, который проверяет, является ли X дядей Y. Без использования готовых предикатов.
 %uncle(+X,+Y)
-uncle(X,Y):-parent(K,Y),parent(Z,K),parent(Z,X),man(X),man(K),man(Z),X\=K.
+%uncle(X,Y):-parent(K,Y),parent(Z,K),parent(Z,X),man(X),man(K),man(Z),X\=K.
 
 %Построить предикат, который проверяет, является ли X дядей Y. C использованием готовых предикатов.
 %uncle(+X,+Y)
-uncle(X,Y):-parent(K,Y),brother(X,K),man(X).
+uncle(X,Y):-parent(K,Y),brother(X,K),man(K), X\=K.
 
 %Построить предикат, который выводит всех дядей X.
 %uncles(+X)
