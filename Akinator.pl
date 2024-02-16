@@ -54,8 +54,8 @@ film(night_hunter):-
     A=2,!.
 
 film(drive):-
-	question(drama),
     question(thriller),
+	question(drama),
     bagof(X,asked(X,y),L),
     length(L,A),
     A=2,!.
