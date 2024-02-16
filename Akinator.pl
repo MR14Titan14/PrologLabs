@@ -36,82 +36,79 @@ question(detective):-
 	
 	
 	
-film('Doomsday'):-
+film(doomsday):-
     question(thriller),
 	question(detective),
 	question(science_fiction).
 
-film('Night Hunter'):-
+film(night_hunter):-
 	question(thriller),
     question(detective).
 
-film('Drive'):-
+film(drive):-
 	question(drama),
     question(thriller).
 
-film('Fight Club'):-
+film(fight_club):-
     question(thriller).
 
-film('Coraline'):-
+film(coraline):-
 	question(horror),
     question(cartoon),
 	question(science_fiction).
 
-film('Hell Boy'):-
+film(hell_boy):-
 	question(horror),
     question(cartoon).
 
-film('Alien vs. Predator'):-
+film(alien_vs_predator):-
 	question(horror),
     question(science_fiction).
 
-film('Scary Movie'):-
+film(scary_movie):-
 	question(horror),
     question(comedy).
 
-film('Astral'):-
+film(astral):-
     question(horror).
 
-film('The Gentlemen'):-
+film(the_gentlemen):-
 	question(action_movie),
     question(comedy).
 		
-film('Murder on the Orient Express'):-
+film(murder_on_the_orient_express):-
 	question(drama),
     question(detective).
 	
-film('Soul'):-
+film(soul):-
 	question(cartoon),
     question(comedy).
 
-film('Elemental'):-
+film(elemental):-
 	question(cartoon),
     question(drama).
 	
-film('War of the Worlds'):-
+film(war_of_the_worlds):-
     question(action_movie),
 	question(science_fiction).
 	
-film('Knives Out'):-
+film(knives_out):-
     question(comedy),
     question(detective).
-    
-film('Astral'):-
-    question(horror).
 	
-film('Drujit po russki'):-
+film(drujit_po_russki):-
     question(comedy).
 	
-film('Shrek'):-
+film(shrek):-
     question(cartoon).
 	
-film('Interstellar'):-
+film(interstellar):-
     question(science_fiction).
 	
-film('Operation Fortune'):-
+film(operation_fortune):-
     question(action_movie).
 	
-film('The Green Mile'):-
+film(the_green_mile):-
     question(drama).
 
 
