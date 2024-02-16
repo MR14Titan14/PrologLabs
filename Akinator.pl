@@ -34,82 +34,145 @@ question(drama):-
 question(detective):-
     query('You wished a detective story?').
 	
-	
+geg:-
+bagof(X,asked(X,y),L),
+length(L,A),
+write(A).
 	
 film(doomsday):-
     question(thriller),
 	question(detective),
-	question(science_fiction).
+	question(science_fiction),
+    bagof(X,asked(X,y),L),
+    length(L,A),
+    A=3.
 
 film(night_hunter):-
 	question(thriller),
-    question(detective).
+    question(detective),
+    bagof(X,asked(X,y),L),
+    length(L,A),
+    A=2.
 
 film(drive):-
 	question(drama),
-    question(thriller).
+    question(thriller),
+    bagof(X,asked(X,y),L),
+    length(L,A),
+    A=2.
 
 film(fight_club):-
-    question(thriller).
+    question(thriller),
+    bagof(X,asked(X,y),L),
+    length(L,A),
+    A=1.
 
 film(coraline):-
 	question(horror),
     question(cartoon),
-	question(science_fiction).
+	question(science_fiction),
+    bagof(X,asked(X,y),L),
+    length(L,A),
+    A=3.
 
 film(hell_boy):-
 	question(horror),
-    question(cartoon).
+    question(cartoon),
+    bagof(X,asked(X,y),L),
+    length(L,A),
+    A=2.
 
 film(alien_vs_predator):-
 	question(horror),
-    question(science_fiction).
+    question(science_fiction),
+    bagof(X,asked(X,y),L),
+    length(L,A),
+    A=2.
 
 film(scary_movie):-
 	question(horror),
-    question(comedy).
+    question(comedy),
+    bagof(X,asked(X,y),L),
+    length(L,A),
+    A=2.
 
 film(astral):-
-    question(horror).
+    question(horror),
+    bagof(X,asked(X,y),L),
+    length(L,A),
+    A=1.
 
 film(the_gentlemen):-
 	question(action_movie),
-    question(comedy).
+    question(comedy),
+    bagof(X,asked(X,y),L),
+    length(L,A),
+    A=2.
 		
 film(murder_on_the_orient_express):-
 	question(drama),
-    question(detective).
+    question(detective),
+    bagof(X,asked(X,y),L),
+    length(L,A),
+    A=2.
 	
 film(soul):-
 	question(cartoon),
-    question(comedy).
+    question(comedy),
+    bagof(X,asked(X,y),L),
+    length(L,A),
+    A=2.
 
 film(elemental):-
 	question(cartoon),
-    question(drama).
+    question(drama),
+    bagof(X,asked(X,y),L),
+    length(L,A),
+    A=2.
 	
 film(war_of_the_worlds):-
     question(action_movie),
-	question(science_fiction).
+	question(science_fiction),
+    bagof(X,asked(X,y),L),
+    length(L,A),
+    A=2.
 	
 film(knives_out):-
     question(comedy),
-    question(detective).
+    question(detective),
+    bagof(X,asked(X,y),L),
+    length(L,A),
+    A=2.
 	
 film(drujit_po_russki):-
-    question(comedy).
+    question(comedy),
+    bagof(X,asked(X,y),L),
+    length(L,A),
+    A=1.
 	
 film(shrek):-
-    question(cartoon).
+    question(cartoon),
+    bagof(X,asked(X,y),L),
+    length(L,A),
+    A=1.
 	
 film(interstellar):-
-    question(science_fiction).
+    question(science_fiction),
+    bagof(X,asked(X,y),L),
+    length(L,A),
+    A=1.
 	
 film(operation_fortune):-
-    question(action_movie).
+    question(action_movie),
+    bagof(X,asked(X,y),L),
+    length(L,A),
+    A=1.
 	
 film(the_green_mile):-
-    question(drama).
+    question(drama),
+    bagof(X,asked(X,y),L),
+    length(L,A),
+    A=1.
 
 
 
