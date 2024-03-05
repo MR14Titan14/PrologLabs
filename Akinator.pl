@@ -1,3 +1,4 @@
+%main()
 main :-
     retractall(asked(_,_)),
     film(Question),
@@ -9,7 +10,7 @@ main :-
     write('The question cannot be solved.'), nl.
 
 
-
+%question(+Object)
 question(horror):-
     query('You wished horror?').
 
@@ -37,7 +38,7 @@ question(detective):-
 question(oscar):-
     query('Did your film winned oscar?').
 	
-	
+%film(+Film)
 film(doomsday):-
     question(thriller),
 	question(detective),
@@ -180,8 +181,7 @@ film(the_green_mile):-
     length(L,A),
     A=1,!.
 
-
-
+%query(+Prompt)
 query(Prompt) :-
     (   asked(Prompt, Reply) -> true
     ;   nl, write(Prompt), write(' (y/n)? '),
