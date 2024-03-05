@@ -66,8 +66,11 @@ write(Sum).
 sum_list_up([],0):-!.
 sum_list_up([H|T],Sum) :- sum_list_up(T,SumTail), Sum is SumTail + H.
 
-%sum_cifr_del()
+%sum_cifr_del(+List,-X,+Number)
 sum_cifr_del([],[],Number). 
 sum_cifr_del([H|T],X,Number):-cifr_sum_down(H,Sum),
 Sum==Number,sum_cifr_del(T,X,Number). 
 sum_cifr_del([H|X],[H|Y],Number):-sum_cifr_del(X,Y,Number). 
+
+%Задание 2
+
