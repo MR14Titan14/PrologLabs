@@ -73,4 +73,16 @@ Sum==Number,sum_cifr_del(T,X,Number).
 sum_cifr_del([H|X],[H|Y],Number):-sum_cifr_del(X,Y,Number). 
 
 %Задание 2
+%min_cifr(+Number,-Result)
+min_cifr(Number,Result):-min_cifr(Number,10,Result).
 
+min_cifr(0,Result,Result):-!.
+
+min_cifr(Number,Min,Result):-Cifr is Number mod 10,
+Cifr < Min,
+Number_temp is Number div 10,
+min_cifr(Number_temp,Cifr,Result).
+
+min_cifr(Number,Min,Result):-
+Number_temp is Number div 10,
+min_cifr(Number_temp,Min,Result).
