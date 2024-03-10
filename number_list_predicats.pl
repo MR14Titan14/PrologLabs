@@ -86,3 +86,20 @@ min_cifr(Number_temp,Cifr,Result).
 min_cifr(Number,Min,Result):-
 Number_temp is Number div 10,
 min_cifr(Number_temp,Min,Result).
+
+%multiply_cifr(+Number,-Result)
+
+multiply_cifr(Number,Result):-multiply_cifr(Number,1,Result).
+
+multiply_cifr(0,Result,Result):-!.
+
+multiply_cifr(Number,Mult, Result):-
+Cifr is Number mod 10,
+(Cifr \= 5 -> Mult_temp is Mult * Cifr),
+Number_temp is Number div 10,
+multiply_cifr(Number_temp,Mult_temp,Result).
+
+multiply_cifr(Number,Mult, Result):-
+Number_temp is Number div 10,
+Mult_temp is Mult,
+multiply_cifr(Number_temp,Mult_temp,Result).
