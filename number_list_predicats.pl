@@ -103,3 +103,8 @@ multiply_cifr(Number,Mult, Result):-
 Number_temp is Number div 10,
 Mult_temp is Mult,
 multiply_cifr(Number_temp,Mult_temp,Result).
+
+%nod(+Number1,+Number2,-Result)
+nod(Number1,0,Number1):-!.
+nod(_,0,_):-!,fail.
+nod(Number1,Number2,Result):-Ost is Number1 mod Number2, nod(Number2,Ost,Result).
