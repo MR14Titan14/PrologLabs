@@ -81,11 +81,11 @@ grand_ma_and_son(X,Y):-grand_so(X,Y),woman(Y);grand_so(Y,X),woman(X).
 
 %Построить предикат, который проверяет, является ли X дядей Y. Без использования готовых предикатов.
 %uncle(+X,+Y)
-%uncle(X,Y):-parent(K,Y),parent(Z,K),parent(Z,X),man(X),man(K),man(Z),X\=K.
+uncle(X,Y):-parent(K,Y),parent(Z,K),parent(Z,X),man(X),man(K),man(Z),X\=K.
 
 %Построить предикат, который проверяет, является ли X дядей Y. C использованием готовых предикатов.
 %uncle(+X,+Y)
-uncle(X,Y):-parent(K,Y),brother(X,K),man(K), X\=K.
+uncle1(X,Y):-parent(K,Y),brother(X,K),man(K), X\=K.
 
 %Построить предикат, который выводит всех дядей X.
 %uncles(+X)
