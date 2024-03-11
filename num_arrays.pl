@@ -47,3 +47,16 @@ read(B),
 min_list(List,Min),
 slice(List,A,B,Sublist),
 count(Sublist,Min,Count).
+
+%contain_max()
+contain_max():-
+write('Enter number of elements: '),
+read(N),
+read_list(N,List),
+write('Enter index A: '),
+read(A),
+write('Enter index B: '),
+read(B),
+max_list(List,Max),
+slice(List,A,B,Sublist),
+member(Max,Sublist).
