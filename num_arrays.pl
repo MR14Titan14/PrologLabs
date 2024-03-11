@@ -22,7 +22,7 @@ slice(List, From, To, Result):-
   append(LTo, _, List),
   append(LFrom, Result, LTo).
 
-%is_glob_max(+Index,+List)
+%is_glob_max()
 is_glob_max():-
 write('Enter number of elements: '),
 read(N),
@@ -35,7 +35,7 @@ Number =:= Max,
 count(List,Number,Count),
 Count =:= 1.
 
-%count_min(+List,+A,+B,-Count)
+%count_min(-Count)
 count_min(Count):-
 write('Enter number of elements: '),
 read(N),
