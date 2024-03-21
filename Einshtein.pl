@@ -1,7 +1,9 @@
+%Задание 4
 %in_list
 in_list([El|_],El).
 in_list([_|T],El):-in_list(T,El).
 
+%pr_ein
 pr_ein:-Workers=[_,_,_,_],
          
         in_list(Workers,[_,_,3,semenov]),

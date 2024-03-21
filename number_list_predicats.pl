@@ -108,3 +108,68 @@ multiply_cifr(Number_temp,Mult_temp,Result).
 nod(Number1,0,Number1):-!.
 nod(_,0,_):-!,fail.
 nod(Number1,Number2,Result):-Ost is Number1 mod Number2, nod(Number2,Ost,Result).
+
+%Задание 5
+%simple(+Num)
+simp(Num):-
+Counter is Num div 2,
+simp(Num,Counter).
+
+simp(Num,1):-!.
+
+
+simp(Num,Counter):-
+Simpl is Num mod Counter,
+Simpl \= 0,
+Countert is Counter - 1,
+simp(Num, Countert).
+
+%prost_del(+Num,-Res) Найти максимальный простой делитель
+prost_del(Num,Res):-
+prost_del(Num,2,Max,Res).
+
+prost_del(Num,Num,Max,Max):-!.
+
+prost_del(Num,Del,Max,Res):-
+Ost is Num mod Del,
+Ost = 0,
+simp(Del),
+Delt is Del + 1,
+prost_del(Num,Delt,Del,Res).
+
+prost_del(Num,Del,Max,Res):-
+Delt is Del + 1,
+prost_del(Num,Delt,Max,Res).
+
+%max_nechpr(+Num, -Res)
+max_nechpr(Num,Res):-
+max_nechpr(Num,2,1,Res).
+
+max_nechpr(Num,Del,Max,Max):-Numt is Num + 1,
+Del = Numt,!.
+
+max_nechpr(Num,Del,Max,Res):-
+simp(Del),
+Delt is Del + 1,
+max_nechpr(Num, Delt, Max, Res).
+
+max_nechpr(Num,Del,Max,Res):-
+Chet is Del mod 2, Chet = 0,
+Delt is Del + 1,
+max_nechpr(Num, Delt, Max, Res).
+
+max_nechpr(Num,Del,Max,Res):-
+Ost is Num mod Del,
+Ost \= 0,
+Delt is Del + 1,
+max_nechpr(Num, Delt, Max, Res).
+
+
+max_nechpr(Num,Del,Max,Res):-
+Delt is Del + 1,
+max_nechpr(Num, Delt, Del, Res).
+
+%nod_max_nechet(+Num, -Res) Найти НОД максимального нечетного непростого делителя числа и произведения его цифр
+nod_max_nechet(Num,Res):- max_nechpr(Num,Nechpr),
+multiply_cifr(Num,Mult),
+nod(Nechpr,Mult,Res).

@@ -22,6 +22,7 @@ slice(List, From, To, Result):-
   append(LTo, _, List),
   append(LFrom, Result, LTo).
 
+%Задание 3
 %is_glob_max()
 is_glob_max():-
 write('Enter number of elements: '),
