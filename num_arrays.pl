@@ -106,3 +106,82 @@ intfl(T,2).
 intfl([H|T],2):-
 integer(H),
 intfl(T,1).
+
+%simp(+Num)
+simp(Num):-
+Counter is Num div 2,
+simp(Num,Counter).
+
+simp(Num,1):-!.
+
+simp(Num,Counter):-
+Simpl is Num mod Counter,
+Simpl \= 0,
+Countert is Counter - 1,
+simp(Num, Countert).
+
+%delp(+Num,+Del,-Res)
+delp(Num,Del,Res):-
+delp(Num,Del,1,1,Res).
+
+delp(Num,Del,Num,Max,Max):-!.
+
+delp(Num,Del,Power,Max,Res):-
+Pow is Del ^ Power,
+Ost is Num mod Pow,
+Ost = 0,
+Powert is Power + 1,
+delp(Num,Del,Powert,Power,Res).
+
+delp(Num,Del,Power,Max,Res):-
+Powert is Power + 1,
+delp(Num,Del,Powert,Max,Res).
+
+%listn(+N,+R,-Res)
+listn(N,R,Res):-
+listn(N,R,[],Res).
+
+
+listn(N,0,TList,TList):-!.
+
+listn(N,R,TList,Res):-
+append(TList,[N],TListt),
+Rt is R - 1,
+listn(N,Rt,TListt,Res).
+
+%prost_del(+N,-Ldel)1.52. Для введенного числа построить список всех его простых делителей, причем если введенное число делится на простое число p в степени n, то в итоговом списке число должно повторятся n раз.
+
+prost_del(N,Ldel):-
+prost_del(N,2,[],Ldel).
+
+prost_del(N,N,Ldel,Ldel):-!.
+
+prost_del(N,Del,List,Ldel):-
+Ost is N mod Del,
+Ost = 0,
+simp(Del),
+delp(N,Del,Raz),
+listn(Del,Raz,ApList),
+append(List,ApList,Listt),
+Delt is Del + 1,
+prost_del(N,Delt,Listt,Ldel).
+
+prost_del(N,Del,List,Ldel):-
+Delt is Del + 1,
+prost_del(N,Delt,List,Ldel).
+
+%moreSum(+N,-Res) Для введенного списка найти количество таких элементов, которые больше, чем сумма всех предыдущих.
+moreSum(N,Res):-read_list(N,List),
+moreSum(List,0,0,Res).
+
+moreSum([],Sum,Count,Count):-!.
+
+moreSum([H|T],Sum,Count,Res):-
+H > Sum,
+Countt is Count + 1,
+Sumt is Sum + H,
+moreSum(T,Sumt,Countt,Res).
+
+moreSum([H|T],Sum,Count,Res):-
+Sumt is Sum + H,
+moreSum(T,Sumt,Count,Res).

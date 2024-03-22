@@ -110,7 +110,7 @@ nod(_,0,_):-!,fail.
 nod(Number1,Number2,Result):-Ost is Number1 mod Number2, nod(Number2,Ost,Result).
 
 %Задание 5
-%simple(+Num)
+%simp(+Num)
 simp(Num):-
 Counter is Num div 2,
 simp(Num,Counter).
