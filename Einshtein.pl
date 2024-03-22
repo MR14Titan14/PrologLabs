@@ -17,3 +17,24 @@ pr_ein:-Workers=[_,_,_,_],
 		write('Tokar - '),write(WHO1),nl,
         write('Slesar - '),write(WHO2),nl,
         write('Svarshik - '),write(WHO3).
+
+%Задание 8
+%prsStud
+prsStud:-
+        Students=[_,_,_,_],
+        in_list(Students,[petr,Fac1]),
+        in_list(Students,[roman,Fac2]),
+        in_list(Students,[sergey,Fac3]),
+
+        in_list(Students,[_,matematik]),
+        in_list(Students,[_,fizik]),
+        in_list(Students,[_,himik]),
+
+        ((Fac1=matematik,
+        Fac3\=F);
+        (Fac2\=F,
+        Fac1=matematik);
+        (Fac3\=matematik,
+        Fac2=himik)),
+
+        write('Roman: '),write(Fac2).
