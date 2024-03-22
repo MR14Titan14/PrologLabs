@@ -63,7 +63,7 @@ slice(List,A,B,Sublist),
 member(Max,Sublist).
 
 %Задание 7
-%chetn(+List)
+%chetn(+N)
 chetn([],_):-!.
 
 chetn(N):-
