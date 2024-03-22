@@ -63,7 +63,7 @@ slice(List,A,B,Sublist),
 member(Max,Sublist).
 
 %Задание 7
-%chetn(+N)
+%chetn(+N) Вывести сначала элементы на четных позициях, потом на нечетных
 chetn([],_):-!.
 
 chetn(N):-
@@ -84,3 +84,25 @@ chetn(T, Indext).
 chetn([H|T],Index):-
 Indext is Index + 1,
 chetn(T, Indext).
+
+%intfl(+N) Проверить чередуются ли целые и вещественные числа
+intfl([],_):-!.
+
+intfl(N):-read_list(N,List),
+intfl(List,0).
+
+intfl([H|T],0):-
+integer(H),
+intfl(T,1).
+
+intfl([H|T],0):-
+not(integer(H)),
+intfl(T,2).
+
+intfl([H|T],1):-
+not(integer(H)),
+intfl(T,2).
+
+intfl([H|T],2):-
+integer(H),
+intfl(T,1).
