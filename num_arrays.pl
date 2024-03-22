@@ -23,7 +23,7 @@ slice(List, From, To, Result):-
   append(LFrom, Result, LTo).
 
 %Задание 3
-%is_glob_max()
+%is_glob_max() Определить является ли элемент по указанному индексу глобальным максимумом
 is_glob_max():-
 write('Enter number of elements: '),
 read(N),
@@ -36,7 +36,7 @@ Number =:= Max,
 count(List,Number,Count),
 Count =:= 1.
 
-%count_min(-Count)
+%count_min(-Count) найти количество минимальных элементов в интервале a, b
 count_min(Count):-
 write('Enter number of elements: '),
 read(N),
@@ -49,7 +49,7 @@ min_list(List,Min),
 slice(List,A,B,Sublist),
 count(Sublist,Min,Count).
 
-%contain_max()
+%contain_max() проверить наличие максимального элемента в интервале a, b
 contain_max():-
 write('Enter number of elements: '),
 read(N),
@@ -107,7 +107,7 @@ intfl([H|T],2):-
 integer(H),
 intfl(T,1).
 
-%simp(+Num)
+%simp(+Num) проверить является ли число Num простым
 simp(Num):-
 Counter is Num div 2,
 simp(Num,Counter).
@@ -120,7 +120,7 @@ Simpl \= 0,
 Countert is Counter - 1,
 simp(Num, Countert).
 
-%delp(+Num,+Del,-Res)
+%delp(+Num,+Del,-Res) определить в какой максимальной степени делитель Del является делителем числа Num
 delp(Num,Del,Res):-
 delp(Num,Del,1,1,Res).
 
@@ -137,7 +137,7 @@ delp(Num,Del,Power,Max,Res):-
 Powert is Power + 1,
 delp(Num,Del,Powert,Max,Res).
 
-%listn(+N,+R,-Res)
+%listn(+N,+R,-Res) добавить в список элемент N R раз
 listn(N,R,Res):-
 listn(N,R,[],Res).
 
