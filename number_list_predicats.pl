@@ -173,3 +173,42 @@ max_nechpr(Num, Delt, Del, Res).
 nod_max_nechet(Num,Res):- max_nechpr(Num,Nechpr),
 multiply_cifr(Num,Mult),
 nod(Nechpr,Mult,Res).
+
+%Задание6
+%findpow(+Num,-Res) определение чилса r при котором 10^r-1 кратно Num
+findpow(Num,Res):-
+findpow(Num,1,Res).
+
+findpow(Num,R,Res):-
+X is 10^R,
+Xt is X - 1,
+Ost is Xt mod Num,
+Ost = 0,
+Res is R,
+!.
+
+findpow(Num,R,Res):-
+Rt is R + 1,
+findpow(Num,Rt,Res).
+
+%period(-Res) главный вызов для 6 задания
+period(Res):-
+period(1,1000,1,0,Res).
+
+period(Num,Num,NumRes,Max,NumRes):-!.
+
+period(Num,Nend,NumRes,Max,Res):-
+nod(Num,10,Nod),
+Nod = 1,
+N2 is Num mod 2,
+N5 is Num mod 5,
+N2 \= 0,
+N5 \= 0,
+findpow(Num,Pow),
+Pow > Max,
+Numt is Num + 1,
+period(Numt,Nend,Num,Pow,Res).
+
+period(Num,Nend,NumRes,Max,Res):-
+Numt is Num + 1,
+period(Numt,Nend,NumRes,Max,Res).
