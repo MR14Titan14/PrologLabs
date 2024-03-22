@@ -66,8 +66,9 @@ member(Max,Sublist).
 %chetn(+List)
 chetn([],_):-!.
 
-chetn([H|T]):-
-chetn([H|T],1).
+chetn(N):-
+read_list(N,List),
+chetn(List,1).
 
 chetn([H|T],1):-
 chetn(T,2),
