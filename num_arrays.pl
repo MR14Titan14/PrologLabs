@@ -61,3 +61,25 @@ read(B),
 max_list(List,Max),
 slice(List,A,B,Sublist),
 member(Max,Sublist).
+
+%Задание 7
+%chetn(+List)
+chetn([],_):-!.
+
+chetn([H|T]):-
+chetn([H|T],1).
+
+chetn([H|T],1):-
+chetn(T,2),
+chetn([H|T],2).
+
+chetn([H|T],Index):-
+Ost is Index mod 2,
+Ost = 0,
+write(H),write(' '),
+Indext is Index + 1,
+chetn(T, Indext).
+
+chetn([H|T],Index):-
+Indext is Index + 1,
+chetn(T, Indext).
